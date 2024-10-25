@@ -1,0 +1,21 @@
+<!-- In templates/bookmodule/links.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Load the static tag at the top of your template -->
+    {% load static %}
+
+    <!-- Use the static tag for referencing CSS or other static files -->
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>Links Page</title>
+</head>
+<body>
+    <h1></h1>
+    <a href="https://www.qu.edu.qa" target="_blank" class="link-style" id="link1">Go to QU website (open in new tab)</a>
+    <a href="https://www.qu.edu.qa" class="link-style" id="link2">Go to QU website (open in the same page/tab)</a>
+    <a href="https://www.qu.edu.qa" class="link-style" id="link3">Go to QU website (open in the same page/tab)</a>
+</body>
+</html>

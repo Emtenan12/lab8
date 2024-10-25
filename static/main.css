@@ -1,0 +1,132 @@
+/* General link styles */
+#link-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.link-style {
+    display: block; /* Makes the links display in block format, each on a new line */
+    padding: 15px;  /* Adds padding inside each link */
+    text-align: center; /* Centers the text */
+    color: black; /* Sets default text color */
+    background-color: lightgreen; /* Sets background color */
+    text-decoration: none; /* Removes underline from links */
+    margin: 10px 0; /* Adds space between the links */
+    border: 1px solid #ccc; /* Adds a border to the links */
+}
+
+/* Different link states */
+#link1 {
+    color: red;
+}
+
+#link2 {
+    color: yellow;
+    background-color: grey;
+}
+
+#link3 {
+    color: white;
+    background-color: black;
+}
+
+/* Hover state */
+.link-style:hover {
+    background-color: lightblue;
+    text-decoration: underline;
+}
+
+/* Visited state */
+.link-style:visited {
+    color: purple;
+}
+
+/* Active state */
+.link-style:active {
+    color: blue;
+    background-color: orange;
+}
+
+/* formating styling */
+h1 {
+    color: green;
+    background-color: #f0f0d6;
+    text-align: center;
+    padding: 10px;
+}
+p {
+    font-size: 16px;
+}
+mark {
+    background-color: yellow;
+}
+
+
+h1 {
+    background-color: #3a7c7d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+ul, ol {
+    margin-left: 20px;
+}
+
+ul li, ol li {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+
+/* General table styling */
+table {
+    width: 60%;               /* Adjust width for better visibility */
+    margin: 20px auto;         /* Center table on the page */
+    border-collapse: collapse; /* Remove double borders */
+    font-family: Arial, sans-serif; /* Set a clean font */
+}
+
+th, td {
+    border: 1px solid #ddd;    /* Add borders to table cells */
+    padding: 8px;              /* Add padding inside cells */
+    text-align: left;          /* Align text to the left */
+}
+
+th {
+    background-color: #f2f2f2; /* Light grey background for headers */
+    font-weight: bold;         /* Make header text bold */
+}
+
+caption {
+    font-size: 1.1em;          /* Increase font size for table caption */
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;        /* Center the heading */
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+/* Add light hover effect on table rows */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Style for first table (Fruit prices) */
+table:first-of-type {
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;    /* Add a border to the entire table */
+}
+
+/* Style for second table (Camelid comparison) */
+table:nth-of-type(2) {
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+}
+
+img {
+    width: 100%;                /* Ensure the image fits within the container */
+    height: auto;               /* Maintain aspect ratio */
+}
