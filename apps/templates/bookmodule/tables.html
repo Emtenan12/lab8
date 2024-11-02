@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
-    <h2>Table 1: Table of Fruits and Their Prices</h2>
-    <table border="1" cellpadding="10">
+    <h3 style= "text-align: center;">Table 1: Table of Fruits and Their Prices </h3>
+    <table border="1" cellpadding="10" align='center'>
         <caption>Table of Fruits and Their Prices</caption>
         <tr>
             <th>Fruit</th>
@@ -35,47 +35,43 @@
         <tr>
             <td colspan="2">Total $3.75</td>
         </tr>
-    </table>
+    </table >
 
-    <h2>Table 2: A More Complex Sample Table</h2>
+    <h3 style="text-align: center; font-weight: normal;">Table 2: A More Complex Sample Table</h3>
+    <table border="1" cellpadding="10" style="border-collapse: collapse; margin: auto;">
 
-    <!-- Container div to align the image and table side by side -->
-    <div style="display: flex; align-items: flex-start;">
-        <!-- Image on the left -->
-        <div>
-            <img src="{% static 'images/desert.jpg' %}" alt="Desert Image" style="width: 300px; height: auto;">
-        </div>
-        
-        <!-- Table on the right -->
-        <div style="margin-left: 20px;">
-            <table border="1" cellpadding="10">
-                <caption>Camelid comparison (Approximate as of 6/2011)</caption>
-                <tr>
-                    <th># of humps</th>
-                    <th>Indigenous region</th>
-                    <th>Spits?</th>
-                    <th>Produces wool?</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Arabian Peninsula</td>
-                    <td>Yes</td>
-                    <td>Yes</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Africa/Asia</td>
-                    <td>Yes</td>
-                    <td>Yes</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Andes Mountains</td>
-                    <td>Yes</td>
-                    <td>Yes</td>
-                </tr>
-            </table>
-        </div>
-    </div>
-</body>
-</html>
+    <tr>
+        <td rowspan="2">
+            <img src="{% static 'images/desert.jpeg' %}" alt="Desert Image" style="width: 300px; height: auto;">
+        </td>
+        <td colspan="5"><strong>Camelid comparison (Approximate as of 6/2011)</strong></td>
+    </tr>
+    <tr>
+        <td><strong># of Hubs</strong></td>
+        <td><strong>indigous region</strong></td>
+        <td><strong>splits?</strong></td>
+        <td><strong>produce wool?</strong></td>
+    </tr>
+
+    <tr>
+        <td><strong>Dromedary</strong></td>
+        <td>1</td>
+        <td>Arabian Peninsula</td>
+        <td>Yes</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td><strong>Camels (Bactrian)</strong></td>
+        <td>2</td>
+        <td>Africa/Asia</td>
+        <td>Yes</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td><strong>Llamas</strong></td>
+        <td>1</td>
+        <td>Andes Mountains</td>
+        <td>Yes</td>
+        <td>Yes</td>
+    </tr>
+</table>

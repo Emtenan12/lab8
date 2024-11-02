@@ -127,6 +127,14 @@ table:nth-of-type(2) {
 }
 
 img {
-    width: 100%;                /* Ensure the image fits within the container */
-    height: auto;               /* Maintain aspect ratio */
+    width: 250px;
+    height: auto;
+    object-fit: contain;
 }
+
+.table-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

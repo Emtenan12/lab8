@@ -22,7 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
+    # os.path.join(BASE_DIR, 'cs471_lab', 'static'), 
+    os.path.join(BASE_DIR, "apps/static")
 ]
+
+
+
+
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, "apps" + os.sep + "templates")
 
@@ -67,7 +73,10 @@ ROOT_URLCONF = 'libproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR],
+        'DIRS': [
+            TEMPLATE_DIR,  # Keeps the original apps/templates path
+            os.path.join(BASE_DIR, 'cs471_lab', 'templates'),  # Path to cs471_lab templates
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
