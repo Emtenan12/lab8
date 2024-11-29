@@ -7,10 +7,13 @@
 {% if books %}
     <ul>
         {% for book in books %}
-            <li><strong>{{ book.title }}</strong> by {{ book.author }}</li>
+            <li>
+                <strong>{{ book.title }}</strong> by {{ book.author }} <br>
+                ID: {{ book.id }}, Price: {{ book.price }}, Edition: {{ book.edition }}
+            </li>
         {% endfor %}
     </ul>
 {% else %}
-    <p>No books found.</p>
+    <p>No book found.</p>
 {% endif %}
 {% endblock content %}

@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from .models import Book
 def index(request):
     name = request.GET.get("name") or "world!"
     return render(request, 'bookmodule/index.html', {"name": name})
@@ -100,3 +100,18 @@ def __getBooksList():
         {'id': 56788765, 'title': 'Reversing: Secrets of Reverse Engineering', 'author': 'E. Eilam'},
         {'id': 43211234, 'title': 'The Hundred-Page Machine Learning Book', 'author': 'Andriy Burkov'}
     ]
+
+def simple_query(request):
+    mybooks =Book.objects.filter(title__icontains='Honorable')
+    return render(request, 'bookmodule/bookList.html', {'books': mybooks})
+
+def lookup_query(request):
+    mybooks = Book.objects.filter(author__isnull=False) \
+                           .filter(title__icontains='Honorable') \
+                           .filter(edition__gte=2) \
+                           .exclude(price__lte=100)[:10]  # Limit to 10 results
+
+    if len(mybooks) >= 1:
+        return render(request, 'bookmodule/bookList.html', {'books': mybooks})
+    else:
+        return render(request, 'bookmodule/index.html')
