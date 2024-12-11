@@ -1,0 +1,17 @@
+{% extends "bookmodule/layouts/base.html" %}
+
+{% block title %}Students by City{% endblock title %}
+
+{% block content %}
+<h1>Students in Each City</h1>
+
+{% if city_counts %}
+    <ul>
+        {% for city in city_counts %}
+            <li>{{ city.city }}: {{ city.student_count }} students</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No data available.</p>
+{% endif %}
+{% endblock content %}
