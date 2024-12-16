@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "bookmodule/layouts/base.html" %}
+{% load static %}
+{% block title %} Updating BOOK {% endblock title %}
+{% block content %}
+<h3>Adding book</h3>
+<form method="POST">
+    {% csrf_token %} 
+    <label for="title">title</label>
+    <input type="text" placeholder="ENTER Book title" id="title" name="title" value="{{obj.title}}" required />
+    <br>
+    <br>
+    <label for="author">author</label>
+    <input type="text" placeholder="ENTER Book author" id="author" name="author" value="{{obj.author}}"required/>
+    <br>
+    <br>
+    <label for="Price">price</label>
+    <input type="number" placeholder="ENTER Book Price" id="price" name="price" min=0 max="1000" value="{{obj.price}}" required/>
+    <br>
+    <br>
+    <label for="edition">edition</label>
+    <input type="number" placeholder="ENTER Book edition" name="edition" id="edition" min=1 max="5" value="{{obj.edition}}" required/>
+    <br>
+    <br>
+    <button type="Submit">UPDATE</button>
+</form>
+
+{% endblock content %}
+</html>

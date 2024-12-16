@@ -1,0 +1,9 @@
+<h1>Books Detail</h1>
+<ul>
+    {% for book in books %}
+        <li>
+            <a href="/books/prac/book_details/{{ book.id }}/">{{ book.title }}</a> by {{ book.author.name }}
+        </li>
+    {% endfor %}
+</ul>
+<a href="/books/prac/home">Back to Home</a>

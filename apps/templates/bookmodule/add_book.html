@@ -1,0 +1,24 @@
+{% extends "bookmodule/layouts/base.html" %}
+
+{% block title %}Adding a book{% endblock title %}
+
+{% block content %}
+<h1>Add a New Book</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label>Title:</label>
+    <input type="text" id='title' name="title" placeholder='Enter valuse here' />
+    <br>
+    <label>Author:</label>
+    <input type="text" name="author" id='author'/>
+    <br>
+    <label>Price:</label>
+    <input type="number" name="price" id='author'>
+    <br>
+    <label>Edition:</label>
+    <input type="number" name="edition" id='edition'>
+    <br>
+    <button type="submit">Add Book</button>
+    <br>
+</form>
+{% endblock content %}

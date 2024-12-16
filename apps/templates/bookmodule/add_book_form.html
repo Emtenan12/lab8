@@ -1,0 +1,11 @@
+{% extends "bookmodule/layouts/base.html" %}
+{% block title %}Add Book{% endblock title %}
+{% block content %}
+<h1>Add a New Book</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'books.book_list_form' %}">Back to Book List</a>
+{% endblock content %}

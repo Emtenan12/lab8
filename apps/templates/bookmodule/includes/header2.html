@@ -1,0 +1,6 @@
+{% with request.resolver_match.url_name as url_name %}
+<div class="topnav">
+    <a class="{% if url_name == 'prac_home' %}active{% endif %}" href="{% url 'prac_home' %}">Home</a>
+    <a class="{% if url_name == 'prac_listbooks' %}active{% endif %}" href="{% url 'prac_listbooks' %}">List books</a>
+</div>
+{% endwith %}
