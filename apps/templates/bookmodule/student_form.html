@@ -1,0 +1,10 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<h1>{{ action }} Student</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{{ action }}</button>
+</form>
+<a href="{% url 'student_list' %}">Back to Student List</a>
+{% endblock %}

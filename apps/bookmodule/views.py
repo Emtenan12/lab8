@@ -6,6 +6,9 @@ from .models import Book_1,Author
 from .models import Address, Student
 from django.db.models import Count, Sum, Avg, Max, Min
 from .forms import BookForm
+from .forms import StudentForm, AddressForm
+
+
 
 def index(request):
     name = request.GET.get("name") or "world!"
@@ -253,3 +256,41 @@ def prac_listbooks(request):
 def book_details(request, book_id):
     book = Book_1.objects.get(id=book_id)
     return render(request, 'bookmodule/book_details.html', {'book': book})
+
+#lab 10
+# List Students
+def student_list(request):
+    students = Student.objects.all()
+    return render(request, 'student_list.html', {'students': students})
+
+# Add Student
+def add_student(request):
+    if request.method == 'POST':
+        form = StudentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('student_list')
+    else:
+        form = StudentForm()
+    return render(request, 'student_form.html', {'form': form, 'action': 'Add'})
+
+# Update Student
+def update_student(request, id):
+    student = get_object_or_404(Student, id=id)
+    if request.method == 'POST':
+        form = StudentForm(request.POST, instance=student)
+        if form.is_valid():
+            form.save()
+            return redirect('student_list')
+    else:
+        form = StudentForm(instance=student)
+    return render(request, 'student_form.html', {'form': form, 'action': 'Update'})
+
+# Delete Student
+def delete_student(request, id):
+    student = get_object_or_404(Student, id=id)
+    if request.method == 'POST':
+        student.delete()
+        return redirect('student_list')
+    return render(request, 'student_confirm_delete.html', {'student': student})
+

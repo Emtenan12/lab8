@@ -40,6 +40,13 @@ urlpatterns = [
     path('lab9_part2/edit/<int:id>/', views.update_book_form, name='update_book_form'),
     path('lab9_part2/delete/<int:id>/', views.delete_book_form, name='delete_book_form'),
 
+    #lab 10
+    path('students/', views.student_list, name='student_list'),
+    path('students/add/', views.add_student, name='add_student'),
+    path('students/edit/<int:id>/', views.update_student, name='update_student'),
+    path('students/delete/<int:id>/', views.delete_student, name='delete_student'),
+
+
     #prac
     path('prac/home', views.prac_home, name='prac_home'),
     path('prac/listbooks', views.prac_listbooks, name='prac_listbooks'),
